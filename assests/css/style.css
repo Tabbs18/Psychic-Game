@@ -1,0 +1,10 @@
+html, body {
+    font-display: bold;
+    color: black;
+    text-align: initial;
+    background-color: burlywood;
+}
+html {
+    border: solid;
+    color: black;
+}
