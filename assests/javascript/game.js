@@ -57,5 +57,6 @@
                   directionsText.textContent = "";
                   userChoiceText.textContent = "You chose: " + userGuess;
                   computerChoiceText.textContent = "The computer chose: " + computerGuess;
+                  
             };
   
