@@ -18,45 +18,58 @@
              var winsText = document.getElementById("wins-text");
              var lossesText = document.getElementById("losses-text");
              var remainingGuessesText = document.getElementById("remainingGuesses-text");
+
+            //  var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+
+
+
+
+             function reset() {
+                  console.log("testing")
+                  //reset guesses to 9 
+                  //wins gets to 9 reset game
+                  remainingGuesses = 9;
+                  lettersGuessed = [];
+
+            };
             
 
             document.onkeyup = function (event) {
                   var userGuess = event.key;
-                  console.log(userGuess);
-                  var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)]
-                  console.log(computerGuess);
+                 // console.log(userGuess);
+                 var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+                  //console.log(computerGuess);
+                  lettersGuessed.push(userGuess);
+                  document.getElementById("lettersGuessed-text").innerHTML = lettersGuessed;
+
+
                   if (userGuess === computerGuess) {
                         wins++;
                         console.log(wins);
-                        remainingGuesses = 9;
-                        lettersGuessed = [];
+
                         winsText.textContent = "wins: " + wins;
+                        reset();
 
-
-                  } else if (userGuess !== computerGuess) {
+                  } else{
                         remainingGuesses--;
                         remainingGuessesText.textContent = "Guesses left: " + remainingGuesses;
 
                   }
-                  if (remainingGuesses == 0) {
+
+    
+                  if (remainingGuesses === 0) {
                         losses++;
-                        lettersGuessed = [];
                         lossesText.textContent = "losses: " + losses;
+                        reset();
 
+                 };
                        
-                  }
-                  if (lettersGuessed.indexOf(userGuess) >= 0) {
 
-                  } else {
-                        lettersGuessed.push(userGuess);
-                        document.getElementById("lettersGuessed-text").innerHTML = lettersGuessed;
-                        console.log(lettersGuessed);
-
-                  }
 
                   directionsText.textContent = "";
                   userChoiceText.textContent = "You chose: " + userGuess;
                   computerChoiceText.textContent = "The computer chose: " + computerGuess;
                   
             };
-  
+
+
