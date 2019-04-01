@@ -1,10 +1,17 @@
 html, body {
     font-display: bold;
-    color: black;
+    color: white;
     text-align: initial;
-    background-color: burlywood;
+    background-image: url(./images/crystal-ball-4043805_1280.jpg);
+    text-align: center;
 }
-html {
-    border: solid;
-    color: black;
+
+#game {
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
 }

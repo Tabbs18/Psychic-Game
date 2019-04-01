@@ -45,7 +45,7 @@
 
                   if (userGuess === computerGuess) {
                         wins++;
-                        console.log(wins);
+                       alert("You Did it!!");
 
                         winsText.textContent = "wins: " + wins;
                         reset();
@@ -59,6 +59,7 @@
     
                   if (remainingGuesses === 0) {
                         losses++;
+                        alert("Sorry Bud!")
                         lossesText.textContent = "losses: " + losses;
                         reset();
 
